@@ -1,0 +1,73 @@
+conky.config = {
+--==============================================================================
+--                                  conkyrc_displaymax
+--  author  : tonichaz
+--  version : v20200510
+--  license : Distributed under the terms of GNU GPL version 3 or later
+--==============================================================================
+-- Conky settings #
+	background = false,
+	update_interval = 240,
+    cpu_avg_samples = 2,
+	net_avg_samples = 2,
+	temperature_unit = 'celsius',
+	double_buffer = true,
+	no_buffers = true,
+
+-- Text settings #
+	override_utf8_locale = true,
+    use_xft = true,
+    font = 'DejaVu Sans Mono:size=10',
+	xftalpha = 0.5,
+	uppercase = false,
+	text_buffer_size = 2048,
+    uppercase = false,
+
+-- Alignment & Minimum size #
+	gap_x = 5,
+	gap_y = 20,
+    minimum_height = 1080,
+	minimum_width = 200,
+
+-- Misc Console #
+	out_to_console = false,
+	out_to_stderr = false,
+	extra_newline = false,
+
+-- Window specifications #
+	own_window = true,
+	own_window_transparent = true,
+	own_window_class = 'override',
+	own_window_type = 'desktop',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	background = false,
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+	alignment = 'top_right',
+
+-- Graphics settings #
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+	stippled_borders = 0,
+	border_width = 1,
+	default_color = 'white',
+	default_outline_color = 'white',
+	default_shade_color = 'white',
+	use_spacer = 'none',
+	show_graph_scale = false,
+	show_graph_range = false
+}
+
+conky.text = [[
+	
+${color red}${hr 3}
+${color red}${font zekton:style=Bold:pixelsize=24}$nodename${font}
+${color grey}${font zekton:style=Bold:pixelsize=14}$sysname $kernel on $machine
+${color red}${hr 3}
+${color grey}
+${exec python3 stocks.py}
+]]
